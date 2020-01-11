@@ -1,0 +1,47 @@
+#自定义属性
+my:
+  project:
+    dir: /data/project
+  img:
+    dir: /data/picture
+
+debug: false
+server:
+  port: 8090
+  tomcat:
+    uri-encoding: UTF-8
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    name: wm
+    url: jdbc:mysql://localhost:3306/wm?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+
+#使用户druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+  servlet:
+    multipart:
+      max-request-size:  1000000Mb
+      enabled: true
+      max-file-size: 1000000Mb
+#  resources:
+#    static-locations: file:${my.img.dir}
+
+#pagehelper配置
+pagehelper:
+  helper-dialect: mysql
